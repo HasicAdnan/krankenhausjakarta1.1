@@ -1,3 +1,17 @@
+<%@page import="com.krankenhausjakarta.dao.ArztDao"%>
+<%
+	response.setHeader("Cache-Control", "no-cache");
+	response.setHeader("Cache-Control", "no-store");
+	response.setHeader("Pragma", "no-cache");
+	response.setDateHeader("Expires", 0);
+%>
+<%@page isELIgnored="false"%>
+<%@page import="com.krankenhausjakarta.dao.entity.Arzt"%>
+<%@page import="java.util.List"%>
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+		 pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -54,22 +68,126 @@
 	</ul>
 </header>
 
-
-
-
-
 <div class="block"></div>
 
 <div class="row">
 <main class="col-12" id="main">
-<div class="container-fluid pt-5">
-    <div class="row flex-nowrap">
 
-    </div>
-</div>
+
+	<div class="container-fulid backImg p-5">
+		<p class="text-center fs-2 text-white"></p>
+	</div>
+	<div class="container p-3">
+		<div class="row">
+			<div class="col-md-6 p-5">
+				<img alt="" src="img/doct.jpg">
+			</div>
+			<a href="listArzt.jsp">Lista Doktora</a>
+
+			<div class="col-md-6">
+				<div class="card paint-card">
+					<div class="card-body">
+						<p class="text-center fs-3">Arzt Termin</p>
+						<c:if test="${not empty arztLogger}">
+							<p class="fs-4 text-center text-danger">${errorMsg}</p>
+							<c:remove var="errorMsg" scope="session" />
+						</c:if>
+						<c:if test="${not empty succMsg}">
+							<p class=" fs-4 text-center text-success">${succMsg}</p>
+							<c:remove var="succMsg" scope="session" />
+						</c:if>
+						<form class="row g-3" action="appAppointment" method="post">
+
+							<input type="hidden" name="userid" value="${userObj.id }">
+
+							<div class="col-md-6">
+								<label  class="form-label">Full Name</label> <input
+									required type="text" class="form-control" name="fullname">
+							</div>
+
+							<div class="col-md-6">
+								<label>Gender</label> <select class="form-control" name="gender"
+															  required>
+								<option value="male">Male</option>
+								<option value="female">Female</option>
+							</select>
+							</div>
+
+							<div class="col-md-6">
+								<label  class="form-label">Age</label> <input
+									required type="number" class="form-control" name="age">
+							</div>
+
+							<div class="col-md-6">
+								<label  class="form-label">Appointment
+									Date</label> <input type="date" class="form-control" required
+														name="appoint_date">
+							</div>
+
+							<div class="col-md-6">
+								<label  class="form-label">Email</label> <input
+									required type="email" class="form-control" name="email">
+							</div>
+
+							<div class="col-md-6">
+								<label  class="form-label">Phone No</label> <input
+									maxlength="10" required type="number" class="form-control"
+									name="phno">
+							</div>
+
+
+							<div class="col-md-6">
+								<label  class="form-label">Diseases</label> <input
+									required type="text" class="form-control" name="diseases">
+							</div>
+
+							<div class="col-md-6">
+								<label  class="form-label">Doctor</label> <select
+									required class="form-control" name="doct">
+								<option value="">--select--</option>
+
+								<%
+									ArztDao dao = new ArztDao();
+									List<Arzt> list = dao.getAllArzt();
+									for (Arzt a : list) {
+								%>
+								<option value="<%=a.getArztid()%>"><%=a.getVorname()%><%=a.getNachname()%>
+								</option>
+								<%
+									}
+								%>
+
+
+
+
+							</select>
+							</div>
+
+							<div class="col-md-12">
+								<label>Full Address</label>
+								<textarea required name="address" class="form-control" rows="3"
+										  cols=""></textarea>
+							</div>
+
+							<c:if test="${empty userObj }">
+								<a href="user_login.jsp" class="col-md-6 offset-md-3 btn btn-success">Submit</a>
+							</c:if>
+
+							<c:if test="${not empty userObj }">
+								<button class="col-md-6 offset-md-3 btn btn-success">Submit</button>
+							</c:if>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+
 
 </main>
-</div>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>

@@ -1,14 +1,16 @@
-package dao;
+package com.krankenhausjakarta.dao;
 
 
-import connection.DBConnection;
-import entity.Arzt;
+import servlet.DBConnection;
+import com.krankenhausjakarta.dao.entity.Arzt;
 import servlet.PasswordEncrypt;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ArztDao {
 
@@ -120,5 +122,34 @@ public class ArztDao {
         }
 
         return f;
+    }
+    public List<Arzt> getAllArzt() {
+        List<Arzt> arztlist = new ArrayList<Arzt>();
+        Arzt arzt = null;
+        try {
+
+            String sql = "select * from krankenhausjakarta.arzt order by arztid desc";
+            PreparedStatement ps = conn.prepareStatement(sql);
+
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                arzt = new Arzt();
+                arzt.setArztid(Integer.parseInt(rs.getString(1)));
+                arzt.setVorname(rs.getString(2));
+                arzt.setNachname(rs.getString(3));
+                arzt.setAdresse(rs.getString(4));
+                arzt.setTelefonnummer(rs.getString(5));
+                arzt.setVersicherungsnummer(rs.getString(6));
+                arzt.setEmail(rs.getString(7));
+                arzt.setPassword(rs.getString(8));
+                arzt.setGeburtstag(rs.getString(9));
+                arzt.setIpAdresse(rs.getString(10));
+                arztlist.add(arzt);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return arztlist;
     }
 }

@@ -19,7 +19,7 @@
 <div class="main-w3layouts wrapper">
     <div class="main-agileinfo">
         <div class="agileits-top">
-            <form action="#" method="post">
+            <div action="#" method="post">
 
                 <h1>Patient Regsitrierung</h1>
 
@@ -66,33 +66,21 @@
 
                 <div class="form-outline mb-4">
                     <label class="form-label" for="form3Example8cg">Geschlecht</label>
-                    <input required type="text" name="geschlecht" id="form3Example8cg" class="form-control form-control-lg" />
+                    <input required type="text" name="geschlecht" id="form3Example9cg" class="form-control form-control-lg" />
                 </div>
 
                 <div class="form-outline mb-4">
                     <label class="form-label" for="form3Example8cg">Alter</label>
-                    <input required type="text" name="alterderperson" id="form3Example8cg" class="form-control form-control-lg" />
+                    <input required type="text" name="alterderperson" id="form3Example10cg" class="form-control form-control-lg" />
                 </div>
 
-                <div class="form-outline mb-4">
-                    <select required name="abteilung_id" style="color:red" id="abteilung_id">
-                        <option value="#" selected>Ihre Abteilung</option>
-                        <option value="1">Neurochirurgie</option>
-                        <option value="2">Orthopädie</option>
-                        <option value="3">Kardiologie</option>
-                        <option value="4">Neurologie</option>
-                        <option value="5">Impfzentrum</option>
-                        <option value="6">Notaufnahme</option>
-                        <option value="7">Unfallchirurgie</option>
-                        <option value="8">Diabetesstation</option>
-                    </select><br>
 
-
-                </div>
-
+            </div>
 
         </div>
         <input type="submit" value="REGISTRIERUNG">
+        <input type="submit" href="patientlogin.jsp" value="Haben Sie scon ein Konto? Login!">
+
         </form>
     </div>
 </div>

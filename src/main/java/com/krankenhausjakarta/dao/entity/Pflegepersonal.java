@@ -1,4 +1,4 @@
-package entity;
+package com.krankenhausjakarta.dao.entity;
 
 public class Pflegepersonal extends Person {
     private String mitarbeiterausweis;

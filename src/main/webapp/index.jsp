@@ -1,4 +1,4 @@
-<%@ page language="java" import="connection.DBConnection" %>
+<%@ page language="java" import="servlet.DBConnection" %>
 <%@ page language="java" import="java.sql.DriverManager" %>
 <%@ page language="java" import="java.sql.Connection" %>
 
@@ -47,10 +47,6 @@
 				<li class="nav-item active">
 					<a class="nav-link" href="#">Kontakt</a>
 				</li>
-
-				<li class="nav-item active">
-                	<a class="nav-link" href="adminlogin.jsp">Administrator Login</a>
-             	</li>
 
 			</ul>
 

@@ -1,8 +1,8 @@
-package dao;
+package com.krankenhausjakarta.dao;
 
 
-import connection.DBConnection;
-import entity.Patient;
+import servlet.DBConnection;
+import com.krankenhausjakarta.dao.entity.Patient;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

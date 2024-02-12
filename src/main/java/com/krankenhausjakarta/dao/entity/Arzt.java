@@ -1,6 +1,4 @@
-package entity;
-
-import java.util.Date;
+package com.krankenhausjakarta.dao.entity;
 
 public class Arzt {
 
