@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+body {
+    width: 100%;
+    height: 100hv;
+    margin: 0;
+    padding: 0;
+    background-image: url("../img/body-background.jpg");
+    background-size: cover;
+
+}
+
+
+.login-form {
+    max-width: 900px;
+    max-height: 800px;
+    opacity: 0.7;
+
+}
+
+
+.gradient-custom-2 {
+    /* fallback for old browsers */
+    background: #6d888a;
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #2e24ee, #3669d8, #367edd, #4564b4);
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #24c9ee, #3694d8, #368cdd, #4577b4);
+    }
+
+    @media (min-width: 768px) {
+    .gradient-form {
+    height: 100vh !important;
+    }
+    }
+    @media (min-width: 769px) {
+    .gradient-custom-2 {
+    border-top-right-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+    }
+    }

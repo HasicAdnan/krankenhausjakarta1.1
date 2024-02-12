@@ -1,0 +1,83 @@
+11-Feb-2024 21:04:18.587 INFORMATION [main] org.apache.catalina.startup.VersionLoggerListener.log Server Version:        Apache Tomcat/10.1.18
+11-Feb-2024 21:04:18.593 INFORMATION [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jan 5 2024 14:39:40 UTC
+11-Feb-2024 21:04:18.593 INFORMATION [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.18.0
+11-Feb-2024 21:04:18.593 INFORMATION [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 11
+11-Feb-2024 21:04:18.593 INFORMATION [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+11-Feb-2024 21:04:18.593 INFORMATION [main] org.apache.catalina.startup.VersionLoggerListener.log Architektur:           amd64
+11-Feb-2024 21:04:18.594 INFORMATION [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Users\adnan\.jdks\openjdk-21.0.2
+11-Feb-2024 21:04:18.594 INFORMATION [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.2+13-58
+11-Feb-2024 21:04:18.594 INFORMATION [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Hersteller:        Oracle Corporation
+11-Feb-2024 21:04:18.594 INFORMATION [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\adnan\IdeaProjects\krankenhausJakarta
+11-Feb-2024 21:04:18.594 INFORMATION [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\adnan\Downloads\apache-tomcat-10.1.18-windows-x64\apache-tomcat-10.1.18
+11-Feb-2024 21:04:18.610 INFORMATION [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+11-Feb-2024 21:04:18.610 INFORMATION [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+11-Feb-2024 21:04:18.610 INFORMATION [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+11-Feb-2024 21:04:18.610 INFORMATION [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+11-Feb-2024 21:04:18.610 INFORMATION [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+11-Feb-2024 21:04:18.611 INFORMATION [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\adnan\Downloads\apache-tomcat-10.1.18-windows-x64\apache-tomcat-10.1.18
+11-Feb-2024 21:04:18.611 INFORMATION [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\adnan\IdeaProjects\krankenhausJakarta
+11-Feb-2024 21:04:18.611 INFORMATION [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\adnan\IdeaProjects\krankenhausJakarta\temp
+11-Feb-2024 21:04:18.611 INFORMATION [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\adnan\IdeaProjects\krankenhausJakarta\conf\logging.properties
+11-Feb-2024 21:04:18.611 INFORMATION [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+11-Feb-2024 21:04:18.611 INFORMATION [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.3\lib\idea_rt.jar=57433:C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.3\bin
+11-Feb-2024 21:04:18.611 INFORMATION [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+11-Feb-2024 21:04:18.612 INFORMATION [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+11-Feb-2024 21:04:18.612 INFORMATION [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+11-Feb-2024 21:04:18.616 INFORMATION [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [2.0.6] using APR version [1.7.4].
+11-Feb-2024 21:04:18.625 INFORMATION [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.11 19 Sep 2023]
+11-Feb-2024 21:04:18.966 INFORMATION [main] org.apache.coyote.AbstractProtocol.init Initialisiere ProtocolHandler["http-nio-8080"]
+11-Feb-2024 21:04:18.976 SCHWERWIEGEND [main] org.apache.catalina.util.LifecycleBase.handleSubClassException Konnte Komponente [Connector["http-nio-8080"]] nicht initialisieren
+	org.apache.catalina.LifecycleException: Protocol handler initialization failed
+		at org.apache.catalina.connector.Connector.initInternal(Connector.java:1015)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:127)
+		at org.apache.catalina.core.StandardService.initInternal(StandardService.java:554)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:127)
+		at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:1010)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:127)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:747)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:769)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:307)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:477)
+	Caused by: java.net.BindException: Address already in use: bind
+		at java.base/sun.nio.ch.Net.bind0(Native Method)
+		at java.base/sun.nio.ch.Net.bind(Net.java:565)
+		at java.base/sun.nio.ch.ServerSocketChannelImpl.netBind(ServerSocketChannelImpl.java:344)
+		at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:301)
+		at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:247)
+		at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:202)
+		at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1280)
+		at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:1293)
+		at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:624)
+		at org.apache.coyote.http11.AbstractHttp11Protocol.init(AbstractHttp11Protocol.java:77)
+		at org.apache.catalina.connector.Connector.initInternal(Connector.java:1013)
+		... 11 more
+11-Feb-2024 21:04:18.977 INFORMATION [main] org.apache.catalina.startup.Catalina.load Server initialization in [606] milliseconds
+11-Feb-2024 21:04:19.028 INFORMATION [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+11-Feb-2024 21:04:19.028 INFORMATION [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.18]
+11-Feb-2024 21:04:19.044 INFORMATION [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\adnan\IdeaProjects\krankenhausJakarta\conf\Catalina\localhost\krankenhausJakarta.xml]
+11-Feb-2024 21:04:20.014 INFORMATION [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+11-Feb-2024 21:04:20.071 INFORMATION [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\adnan\IdeaProjects\krankenhausJakarta\conf\Catalina\localhost\krankenhausJakarta.xml] has finished in [1.025] ms
+11-Feb-2024 21:04:20.071 INFORMATION [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\adnan\IdeaProjects\krankenhausJakarta\conf\Catalina\localhost\ROOT.xml]
+11-Feb-2024 21:04:20.095 INFORMATION [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\adnan\IdeaProjects\krankenhausJakarta\conf\Catalina\localhost\ROOT.xml] has finished in [24] ms
+11-Feb-2024 21:04:20.099 INFORMATION [main] org.apache.catalina.startup.Catalina.start Server startup in [1120] milliseconds
+11-Feb-2024 21:04:20.105 SCHWERWIEGEND [main] org.apache.catalina.core.StandardServer.await Failed to create server shutdown socket on address [localhost] and port [8005] (base port [8005] and offset [0])
+	java.net.BindException: Address already in use: bind
+		at java.base/sun.nio.ch.Net.bind0(Native Method)
+		at java.base/sun.nio.ch.Net.bind(Net.java:565)
+		at java.base/sun.nio.ch.Net.bind(Net.java:554)
+		at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636)
+		at java.base/java.net.ServerSocket.bind(ServerSocket.java:391)
+		at java.base/java.net.ServerSocket.<init>(ServerSocket.java:278)
+		at org.apache.catalina.core.StandardServer.await(StandardServer.java:577)
+		at org.apache.catalina.startup.Catalina.await(Catalina.java:887)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:833)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:347)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:478)
+11-Feb-2024 21:04:20.106 INFORMATION [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+11-Feb-2024 21:04:20.106 INFORMATION [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+11-Feb-2024 21:04:20.118 INFORMATION [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+11-Feb-2024 21:04:20.118 INFORMATION [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
