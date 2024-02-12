@@ -1,7 +1,7 @@
 package com.krankenhausjakarta.dao;
 
+import com.krankenhausjakarta.dao.entity.PatientTermin;
 import servlet.DBConnection;
-import com.krankenhausjakarta.dao.entity.Termin;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,7 +14,7 @@ public class TerminDao {
     Connection conn = dbInstance.getConnect();
 
 
-    public boolean addTermin(Termin ter) {
+    public boolean addTermin(PatientTermin ter) {
         boolean f = false;
 
         try {
@@ -23,7 +23,7 @@ public class TerminDao {
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setInt(1, ter.getArztid());
             ps.setString(2, ter.getPatientverischerungsnummer());
-            ps.setInt(1, ter.getAbteilungid());
+            ps.setInt(3, ter.getAbteilungid());
             ps.setString(4, ter.getDatum());
             ps.setString(5, ter.getUhrzeit());
             ps.setString(6, ter.getHinweis());
@@ -37,12 +37,13 @@ public class TerminDao {
             e.printStackTrace();
         }
 
+        System.out.println(f);
         return f;
     }
 
-    public List<Termin> getAllTerminByLoginArzt(int arztid) {
-        List<Termin> terminlist = new ArrayList<Termin>();
-        Termin ter = null;
+    public List<PatientTermin> getAllTerminByLoginArzt(int arztid) {
+        List<PatientTermin> terminlist = new ArrayList<PatientTermin>();
+        PatientTermin ter = null;
 
         try {
 
@@ -52,7 +53,7 @@ public class TerminDao {
 
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                ter = new Termin();
+                ter = new PatientTermin();
                 ter.setTerminid(rs.getInt(1));
                 ter.setArztid(rs.getInt(2));
                 ter.setPatientverischerungsnummer(rs.getString(3));
@@ -71,9 +72,9 @@ public class TerminDao {
         return terminlist;
     }
 
-    public List<Termin> getAllTerminByArztLogin(int arztid) {
-        List<Termin> terminlist = new ArrayList<Termin>();
-        Termin ter = null;
+    public List<PatientTermin> getAllTerminByArztLogin(int arztid) {
+        List<PatientTermin> terminlist = new ArrayList<PatientTermin>();
+        PatientTermin ter = null;
 
         try {
 
@@ -83,7 +84,7 @@ public class TerminDao {
 
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                ter = new Termin();
+                ter = new PatientTermin();
                 ter.setTerminid(rs.getInt(1));
                 ter.setArztid(rs.getInt(2));
                 ter.setPatientverischerungsnummer(rs.getString(3));
@@ -102,9 +103,9 @@ public class TerminDao {
         return terminlist;
     }
 
-    public Termin getTerminByTerminid(int terminid) {
+    public PatientTermin getTerminByTerminid(int terminid) {
 
-        Termin ter = null;
+        PatientTermin ter = null;
 
         try {
 
@@ -114,7 +115,7 @@ public class TerminDao {
 
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                ter = new Termin();
+                ter = new PatientTermin();
                 ter.setTerminid(rs.getInt(1));
                 ter.setArztid(rs.getInt(2));
                 ter.setPatientverischerungsnummer(rs.getString(3));
@@ -154,9 +155,9 @@ public class TerminDao {
         return f;
     }
 
-    public List<Termin> getAllTermin() {
-        List<Termin> terminlist = new ArrayList<Termin>();
-        Termin ter = null;
+    public List<PatientTermin> getAllTermin() {
+        List<PatientTermin> terminlist = new ArrayList<PatientTermin>();
+        PatientTermin ter = null;
 
         try {
 
@@ -165,7 +166,7 @@ public class TerminDao {
 
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                ter = new Termin();
+                ter = new PatientTermin();
                 ter.setTerminid(rs.getInt(1));
                 ter.setArztid(rs.getInt(2));
                 ter.setPatientverischerungsnummer(rs.getString(3));

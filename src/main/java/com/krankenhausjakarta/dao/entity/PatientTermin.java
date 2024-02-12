@@ -1,6 +1,6 @@
 package com.krankenhausjakarta.dao.entity;
 
-public class Termin {
+public class PatientTermin {
     private int terminid;
     private int arztid;
     private String patientverischerungsnummer;
@@ -9,10 +9,10 @@ public class Termin {
     private String uhrzeit;
     private String hinweis;
 
-    public Termin() {
+    public PatientTermin() {
     }
 
-    public Termin(int arztid, String patientverischerungsnummer, int abteilungid, String datum, String uhrzeit, String hinweis) {
+    public PatientTermin(int arztid, String patientverischerungsnummer, int abteilungid, String datum, String uhrzeit, String hinweis) {
         this.arztid = arztid;
         this.patientverischerungsnummer = patientverischerungsnummer;
         this.abteilungid = abteilungid;
@@ -79,7 +79,7 @@ public class Termin {
 
     @Override
     public String toString() {
-        return "Termin{" +
+        return "PatientTermin{" +
                 "terminid=" + terminid +
                 ", arztid=" + arztid +
                 ", patientverischerungsnummer='" + patientverischerungsnummer + '\'' +

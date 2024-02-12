@@ -2,7 +2,8 @@ package servlet;
 
 
 import com.krankenhausjakarta.dao.TerminDao;
-import com.krankenhausjakarta.dao.entity.Termin;
+import com.krankenhausjakarta.dao.entity.PatientTermin;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -26,19 +27,20 @@ public class TerminServlet extends HttpServlet {
             String uhrzeit = req.getParameter("uhrzeit");
             String hinweis = req.getParameter("hinweis");
 
-            Termin ter = new Termin(arztid, patientvesricherungsnummer, abteilungid,datum, uhrzeit, hinweis);
+            PatientTermin ter = new PatientTermin(arztid, patientvesricherungsnummer, abteilungid,datum, uhrzeit, hinweis);
             DBConnection dbInstance = DBConnection.getInstance();
             Connection conn = dbInstance.getConnect();
             TerminDao dao = new TerminDao();
             HttpSession session = req.getSession();
+            System.out.println(ter.toString());
 
-            if (dao.addTermin(ter)) {
-                session.setAttribute("succMsg", "Termin Sucessfully");
-                resp.sendRedirect("arzt_dashboard.jsp");
+            boolean f = dao.addTermin(ter);
+            if (f) {
+                RequestDispatcher re = req.getRequestDispatcher("index.jsp");
+                re.forward(req, resp);
             } else {
-                session.setAttribute("errorMsg", "Something wrong on server");
-                resp.sendRedirect("arzt_appointment.jsp");
-
+                session.setAttribute("errorMsg", "Ops, können Sie versuchen noch einmal");
+                resp.sendRedirect("arztregistrierung.jsp");
             }
 
     }
