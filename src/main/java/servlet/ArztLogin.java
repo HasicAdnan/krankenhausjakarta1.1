@@ -31,11 +31,14 @@ public class ArztLogin extends HttpServlet {
         }
 
         if (arzt != null) {
-            session.setAttribute("arztLogger", arzt);
             resp.sendRedirect("arztdashboard.jsp");
+            session=req.getSession();
+            session.setAttribute("arztLogger",arzt);
         } else {
             session.setAttribute("falscheNachricht", "falsche email & password");
             resp.sendRedirect("arztlogin.jsp");
+            session.invalidate();
+            req.getSession(false);
         }
 
     }

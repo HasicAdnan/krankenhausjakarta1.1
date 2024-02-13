@@ -1,7 +1,7 @@
 package servlet;
 
 
-import com.krankenhausjakarta.dao.TerminDao;
+import com.krankenhausjakarta.dao.PatientTerminDao;
 import com.krankenhausjakarta.dao.entity.PatientTermin;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -30,13 +30,14 @@ public class TerminServlet extends HttpServlet {
             PatientTermin ter = new PatientTermin(arztid, patientvesricherungsnummer, abteilungid,datum, uhrzeit, hinweis);
             DBConnection dbInstance = DBConnection.getInstance();
             Connection conn = dbInstance.getConnect();
-            TerminDao dao = new TerminDao();
+            PatientTerminDao dao = new PatientTerminDao();
             HttpSession session = req.getSession();
             System.out.println(ter.toString());
 
             boolean f = dao.addTermin(ter);
             if (f) {
-                RequestDispatcher re = req.getRequestDispatcher("index.jsp");
+                session.setAttribute("terminLogger", ter.getArztid());
+                RequestDispatcher re = req.getRequestDispatcher("termine.jsp");
                 re.forward(req, resp);
             } else {
                 session.setAttribute("errorMsg", "Ops, können Sie versuchen noch einmal");

@@ -1,7 +1,6 @@
 <%@ page language="java" import="servlet.DBConnection" %>
 <%@ page language="java" import="java.sql.DriverManager" %>
 <%@ page language="java" import="java.sql.Connection" %>
-
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="de">
@@ -13,10 +12,14 @@
 	<meta name="generator" content="Hugo 0.101.0">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 	<link rel="stylesheet" href="components/assets/css/main.css">
-	<script src="js/cov.js"></script>
 	<title>Krankenhaus</title>
+	<script type="text/javascript">
+		// Funkcija za sprečavanje povratka na prethodnu stranicu
+		window.history.forward();
+		function noBack() { window.history.forward(); }
+	</script>
 </head>
-<body>
+<body onload="noBack();">
 <header class="col-12">
 	<div class="logo-wrapper">
 		<img src="components/assets/img/logo.jpg" alt="logo" id="logo-img" width="120px" height="120px">
@@ -200,12 +203,21 @@
 	</div>
 </section>
 
-
-
-
+<script src="components/assets/js/noBack.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+<!-- Footer -->
+<footer class="page-footer font-small blue">
+
+	<!-- Copyright -->
+	<div class="footer-copyright bg-primary text-center py-3">© 2024 Copyright:
+		<a href="/"> MDBootstrap.com</a>
+	</div>
+	<!-- Copyright -->
+
+</footer>
+<!-- Footer -->
 
 </body>
 </html>

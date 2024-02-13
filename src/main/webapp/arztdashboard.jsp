@@ -5,6 +5,9 @@
 <%@ page import="servlet.DBConnection" %>
 <%@ page import="com.krankenhausjakarta.dao.AbteilungDao" %>
 <%@ page import="com.krankenhausjakarta.dao.entity.Abteilung" %>
+<%@ page import="java.util.Calendar" %>
+<%@ page import="java.util.GregorianCalendar" %>
+<%@page contentType="text/html" language="java"%>
 <!doctype html>
 <html lang="">
 <head>
@@ -12,12 +15,13 @@
 	<meta name="viewport" content="width=, user-scalable=, initial-scale=, maximum-scale=, minimum-scale=">
 	<meta http-equiv="X-UA-Compatible" content="ie=">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="components/assets/css/arztdashboard.css">
 	<title></title>
+
 </head>
-<body>
+<body onload="noBack();">
 <!--Navbar -->
-<nav class="navbar navbar-expand-sm bg-primary navbar-light">
+<nav class="navbar navbar-expand-sm  navbar-light">
 	<ul class="navbar-nav">
 		<li class="nav-item active">
 			<a class="nav-link" href="index.jsp">Home</a>
@@ -26,13 +30,14 @@
 			<a class="nav-link" href="listArzt.jsp">Arzt List</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href=terminList.jsp">Termin List</a>
+			<a class="nav-link" href="termine.jsp">Termin List</a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="index.jsp">Willkommen ${arztLogger.vorname} ${arztLogger.nachname}</a>
+
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="index.jsp">Logout</a>
+			<a class="nav-link" href="logout.jsp">Logout</a>
 		</li>
 	</ul>
 </nav>
@@ -41,6 +46,7 @@
 	<div class="row justify-content-center">
 		<div class="col-md-6">
 <form action="appTermin" method="post" style="max-width: 1500px;">
+	<h1>Termin: </h1>
 	<div class="form-group">
 		<label  class="form-label">Arzt</label> <select
 			required class="form-control" name="arztid">
@@ -52,6 +58,7 @@
 			for (Arzt arzt : list) {
 		%>
 		<option value="<%=arzt.getArztid()%>"><%=arzt.getVorname()%> <%=arzt.getNachname()%>
+
 		</option>
 		<%
 			}
@@ -103,10 +110,6 @@
 		</div>
 	</div>
 </div>
-
-
-
-
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>

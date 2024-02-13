@@ -27,9 +27,9 @@ public class PatientRegistrierung extends HttpServlet {
             String passwordEncrypt = PasswordEncrypt.encryptPassword(password);
             String geburtstag = req.getParameter("geburtstag");
             String ipAdresse = req.getParameter("ipadresse");
-            String blutgruppe = req.getParameter("blutgruppe");
 
-            Patient patient = new Patient(vorname, nachname, adresse, telefonnummer, versicherungsnummer, email, passwordEncrypt, geburtstag, ipAdresse, blutgruppe);
+
+            Patient patient = new Patient(vorname, nachname, adresse, telefonnummer, versicherungsnummer, email, passwordEncrypt, geburtstag, ipAdresse);
 
             PatientDao dao = new PatientDao();
 

@@ -17,7 +17,7 @@ public class PatientDao {
         SingletonIp singletonIp = SingletonIp.getInstance();
 
         try {
-            String sql = "insert into new_schema.patient(vorname, nachname, adresse, telefonnummer, versicherungsnummer, email, password, ipAdresse, geburtstag, blutgruppe ) values(?,?, ?, ?, ?, ?, ?, ?, ?, ?) ";
+            String sql = "insert into krankenhausjakarta.patient(vorname, nachname, adresse, telefonnummer, versicherungsnummer, email, password, geburtstag, ipAdresse ) values(?,?, ?, ?, ?, ?, ?, ?, ?) ";
 
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, patient.getVorname());
@@ -27,9 +27,8 @@ public class PatientDao {
             ps.setString(5, patient.getVersicherungsnummer());
             ps.setString(6, patient.getEmail());
             ps.setString(7, patient.getPassword());
-            ps.setString(8, singletonIp.getIp());
-            ps.setString(9, patient.getGeburtstag());
-            ps.setString(10, patient.getBlutgruppe());
+            ps.setString(8, patient.getGeburtstag());
+            ps.setString(9, singletonIp.getIp());
 
             int i = ps.executeUpdate();
 
@@ -41,7 +40,6 @@ public class PatientDao {
             e.printStackTrace();
         }
 
-        conn.close();
         return result;
     }
 }

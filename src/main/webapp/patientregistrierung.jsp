@@ -23,63 +23,63 @@
 
                 <h1>Patient Regsitrierung</h1>
 
-                <div class="form-outline mb-4">
-                    <label class="form-label" for="form3Example1cg">Vorname : </label>
-                    <input required type="text" id="form3Example1cg" name="vorname" class="form-control form-control-lg" />
+                <form action="patient_register" method="post">
 
-                </div>
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="form3Example1cg">Vorname : </label>
+                        <input type="text" id="form3Example1cg" name="vorname" class="form-control form-control-lg" />
 
-                <div class="form-outline mb-4">
-                    <label class="form-label" for="form3Example2cg">Nachname : </label>
-                    <input required type="text" id="form3Example2cg" name="nachname" class="form-control form-control-lg" />
-                </div>
+                    </div>
 
-                <div class="form-outline mb-4">
-                    <label class="form-label" for="form3Example3cg">Adresse : </label>
-                    <input required type="text" id="form3Example3cg" name="adresse" class="form-control form-control-lg" />
-                </div>
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="form3Example2cg">Nachname : </label>
+                        <input type="text" id="form3Example2cg" name="nachname" class="form-control form-control-lg" />
+                    </div>
 
-                <div class="form-outline mb-4">
-                    <label class="form-label" for="form3Example4cg">Telefonnummer : </label>
-                    <input required type="text" id="form3Example4cg" name="telefonnummer" class="form-control form-control-lg" />
-                </div>
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="form3Example3cg">Adresse : </label>
+                        <input type="text" id="form3Example3cg" name="adresse" class="form-control form-control-lg" />
+                    </div>
 
-                <div class="form-outline mb-4">
-                    <label class="form-label" for="form3Example5cg">Versicherungsnummer : </label>
-                    <input required type="text" id="form3Example5cg" name="versicherungsnummer" class="form-control form-control-lg"/>
-                </div>
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="form3Example4cg">Telefonnummer : </label>
+                        <input type="text" id="form3Example4cg" name="telefonnummer" class="form-control form-control-lg" />
+                    </div>
 
-                <div class="form-outline mb-4">
-                    <label class="form-label" for="form3Example6cg">Email : </label>
-                    <input required type="email" id="form3Example6cg" name="email" class="form-control form-control-lg" />
-                </div>
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="form3Example5cg">Versicherungsnummer : </label>
+                        <input type="text" id="form3Example5cg" name="versicherungsnummer" class="form-control form-control-lg"/>
+                    </div>
 
-                <div class="form-outline mb-4">
-                    <label class="form-label" for="form3Example7cg">Password : </label>
-                    <input required type="password" id="form3Example7cg" name="password" class="form-control form-control-lg" />
-                </div>
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="form3Example6cg">Email : </label>
+                        <input type="email" id="form3Example6cg" name="email" class="form-control form-control-lg" />
+                    </div>
 
-                <div class="form-outline mb-4">
-                    <label class="form-label" for="form3Example8cg">Geburtstag</label>
-                    <input required type="text" name="geburtstag" id="form3Example8cg" class="form-control form-control-lg" />
-                </div>
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="form3Example7cg">Password : </label>
+                        <input type="password" id="form3Example7cg" name="password" class="form-control form-control-lg" />
+                    </div>
 
-                <div class="form-outline mb-4">
-                    <label class="form-label" for="form3Example8cg">Geschlecht</label>
-                    <input required type="text" name="geschlecht" id="form3Example9cg" class="form-control form-control-lg" />
-                </div>
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="form3Example8cg">Geburtstag</label>
+                        <input type="text" id="form3Example8cg" class="form-control form-control-lg" />
+                    </div>
 
-                <div class="form-outline mb-4">
-                    <label class="form-label" for="form3Example8cg">Alter</label>
-                    <input required type="text" name="alterderperson" id="form3Example10cg" class="form-control form-control-lg" />
-                </div>
+                    <p class="text-center text-muted mt-5 mb-0">Haben Sie schon ein Konto?
+                        <a href="patientlogin.jsp
+" class="fw-bold text-body">
+                            <u>Login here</u>
+                        </a>
+                    </p>
+                    <input type="submit" value="REGISTRIERUNG">
+                </form>
 
 
             </div>
 
         </div>
-        <input type="submit" value="REGISTRIERUNG">
-        <input type="submit" href="patientlogin.jsp" value="Haben Sie scon ein Konto? Login!">
+
 
         </form>
     </div>

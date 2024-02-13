@@ -1,5 +1,6 @@
 package com.krankenhausjakarta.dao;
 
+import com.krankenhausjakarta.dao.entity.Abteilung;
 import com.krankenhausjakarta.dao.entity.PatientTermin;
 import servlet.DBConnection;
 
@@ -9,7 +10,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TerminDao {
+public class PatientTerminDao {
     DBConnection dbInstance = DBConnection.getInstance();
     Connection conn = dbInstance.getConnect();
 
@@ -43,7 +44,7 @@ public class TerminDao {
 
     public List<PatientTermin> getAllTerminByLoginArzt(int arztid) {
         List<PatientTermin> terminlist = new ArrayList<PatientTermin>();
-        PatientTermin ter = null;
+        PatientTermin term = null;
 
         try {
 
@@ -53,24 +54,27 @@ public class TerminDao {
 
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                ter = new PatientTermin();
-                ter.setTerminid(rs.getInt(1));
-                ter.setArztid(rs.getInt(2));
-                ter.setPatientverischerungsnummer(rs.getString(3));
-                ter.setAbteilungid(rs.getInt(1));
-                ter.setDatum(rs.getString(5));
-                ter.setUhrzeit(rs.getString(6));
-                ter.setHinweis(rs.getString(7));
+                term = new PatientTermin();
+                term.setTerminid(rs.getInt(1));
+                term.setArztid(rs.getInt(2));
+                term.setPatientverischerungsnummer(rs.getString(3));
+                term.setAbteilungid(rs.getInt(1));
+                term.setDatum(rs.getString(5));
+                term.setUhrzeit(rs.getString(6));
+                term.setHinweis(rs.getString(7));
 
-                terminlist.add(ter);
+                terminlist.add(term);
+            }  for(PatientTermin ab : terminlist) {
+                System.out.println(ab);
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
+            return terminlist;
+        }
 
-        return terminlist;
-    }
+
+
 
     public List<PatientTermin> getAllTerminByArztLogin(int arztid) {
         List<PatientTermin> terminlist = new ArrayList<PatientTermin>();
