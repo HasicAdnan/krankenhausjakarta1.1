@@ -1,7 +1,7 @@
 package servlet;
 
 import com.krankenhausjakarta.dao.PatientDao;
-import com.krankenhausjakarta.dao.entity.Patient;
+import entity.Patient;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -21,7 +21,7 @@ public class PatientRegistrierung extends HttpServlet {
             String nachname = req.getParameter("nachname");
             String adresse = req.getParameter("adresse");
             String telefonnummer = req.getParameter("telefonnummer");
-            String versicherungsnummer = req.getParameter("versicherungsnummer");
+            String patientversicherungsnummer = req.getParameter("versicherungsnummer");
             String email = req.getParameter("email");
             String password = req.getParameter("password");
             String passwordEncrypt = PasswordEncrypt.encryptPassword(password);
@@ -29,7 +29,7 @@ public class PatientRegistrierung extends HttpServlet {
             String ipAdresse = req.getParameter("ipadresse");
 
 
-            Patient patient = new Patient(vorname, nachname, adresse, telefonnummer, versicherungsnummer, email, passwordEncrypt, geburtstag, ipAdresse);
+           Patient patient = new Patient(vorname, nachname,adresse,telefonnummer,patientversicherungsnummer, email, passwordEncrypt, geburtstag, ipAdresse);
 
             PatientDao dao = new PatientDao();
 

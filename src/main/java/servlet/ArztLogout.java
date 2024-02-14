@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "arztLogout", urlPatterns = {"/arztlogout"})
+@WebServlet("/arztLogout")
 public class ArztLogout extends HttpServlet {
 
     @Override

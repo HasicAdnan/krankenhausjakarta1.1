@@ -30,10 +30,10 @@
 
                       <form action="arztLogin" method="post">
                           <c:if test="${not empty allesOk}">
-                              <p class="form-outline mb-4">${fehler}</p>
+                              <p class="form-outline mb-4">${allesOk}</p>
                               <c:remove var="errorMsg" scope="session" />
                           </c:if>
-                          <c:if test="${not empty allesOk}">
+                          <c:if test="${not empty fehler}">
                               <div class="form-outline mb-4s" role="alert">${fehler}</div>
                               <c:remove var="allesOk" scope="session" />
                           </c:if>
@@ -57,7 +57,7 @@
                         </div>
 
                         <div class="d-flex align-items-center justify-content-center pb-4">
-                          <p class="mb-0 me-2">Haben Sie novh kein Konto??</p>
+                          <p class="mb-0 me-2">Haben Sie noch kein Konto??</p>
                             <a href="arztregistrierung.jsp"  class="text-decoration-none">
                                 <button type="button" class="btn btn-outline-danger">
                            Dann erstellen Sie jetzt eins!

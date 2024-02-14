@@ -61,7 +61,7 @@
 
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form3Example8cg">Geburtstag</label>
-                        <input type="text" id="form3Example8cg" class="form-control form-control-lg" />
+                        <input type="text" name="geburtstag" id="form3Example8cg" class="form-control form-control-lg" />
                     </div>
 
                     <p class="text-center text-muted mt-5 mb-0">Haben Sie schon ein Konto?

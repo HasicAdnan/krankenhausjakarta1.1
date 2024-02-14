@@ -1,7 +1,6 @@
 package com.krankenhausjakarta.dao;
 
-import com.krankenhausjakarta.dao.entity.Abteilung;
-import com.krankenhausjakarta.dao.entity.PatientTermin;
+import entity.PatientTermin;
 import servlet.DBConnection;
 
 import java.sql.Connection;
@@ -72,6 +71,37 @@ public class PatientTerminDao {
         }
             return terminlist;
         }
+
+    public List<PatientTermin> getAllTerminByLoginPatient() {
+        List<PatientTermin> terminlist = new ArrayList<PatientTermin>();
+        PatientTermin term = null;
+
+        try {
+
+            String sql = "select * from krankenhausjakarta.termin where verischerungsnummer=?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, term.getPatientverischerungsnummer());
+
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                term = new PatientTermin();
+                term.setTerminid(rs.getInt(1));
+                term.setArztid(rs.getInt(2));
+                term.setPatientverischerungsnummer(rs.getString(3));
+                term.setAbteilungid(rs.getInt(1));
+                term.setDatum(rs.getString(5));
+                term.setUhrzeit(rs.getString(6));
+                term.setHinweis(rs.getString(7));
+
+                terminlist.add(term);
+            }  for(PatientTermin ab : terminlist) {
+                System.out.println(ab);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return terminlist;
+    }
 
 
 
@@ -174,7 +204,7 @@ public class PatientTerminDao {
                 ter.setTerminid(rs.getInt(1));
                 ter.setArztid(rs.getInt(2));
                 ter.setPatientverischerungsnummer(rs.getString(3));
-                ter.setAbteilungid(rs.getInt(1));
+                ter.setAbteilungid(rs.getInt(4));
                 ter.setDatum(rs.getString(5));
                 ter.setUhrzeit(rs.getString(6));
                 ter.setHinweis(rs.getString(7));

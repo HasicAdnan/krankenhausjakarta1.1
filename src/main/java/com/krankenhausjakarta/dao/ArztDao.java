@@ -2,7 +2,7 @@ package com.krankenhausjakarta.dao;
 
 
 import servlet.DBConnection;
-import com.krankenhausjakarta.dao.entity.Arzt;
+import entity.Arzt;
 import servlet.PasswordEncrypt;
 
 import java.sql.Connection;

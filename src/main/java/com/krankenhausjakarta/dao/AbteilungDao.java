@@ -1,15 +1,12 @@
 package com.krankenhausjakarta.dao;
 
 
-import com.krankenhausjakarta.dao.entity.Abteilung;
+import entity.Abteilung;
 import servlet.DBConnection;
-import com.krankenhausjakarta.dao.entity.Arzt;
-import servlet.PasswordEncrypt;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 

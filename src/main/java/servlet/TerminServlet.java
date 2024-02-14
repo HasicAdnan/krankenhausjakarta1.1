@@ -2,7 +2,7 @@ package servlet;
 
 
 import com.krankenhausjakarta.dao.PatientTerminDao;
-import com.krankenhausjakarta.dao.entity.PatientTermin;
+import entity.PatientTermin;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

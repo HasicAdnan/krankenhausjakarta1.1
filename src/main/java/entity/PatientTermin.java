@@ -1,4 +1,4 @@
-package com.krankenhausjakarta.dao.entity;
+package entity;
 
 public class PatientTermin {
     private int terminid;

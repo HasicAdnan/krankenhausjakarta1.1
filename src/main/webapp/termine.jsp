@@ -1,11 +1,11 @@
-<%@page import="com.krankenhausjakarta.dao.entity.Arzt"%>
+<%@page import="entity.Arzt"%>
 <%@page import="com.krankenhausjakarta.dao.ArztDao "%>
 <%@page import="java.util.List"%>
 <%@page import="com.krankenhausjakarta.dao.ArztDao "%>
 <%@ page import="servlet.DBConnection" %>
-<%@ page import="com.krankenhausjakarta.dao.entity.PatientTermin" %>
+<%@ page import="entity.PatientTermin" %>
 <%@ page import="com.krankenhausjakarta.dao.PatientTerminDao" %>
-<%@ page import="com.krankenhausjakarta.dao.entity.Abteilung" %>
+<%@ page import="entity.Abteilung" %>
 <%@ page import="com.krankenhausjakarta.dao.AbteilungDao" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>

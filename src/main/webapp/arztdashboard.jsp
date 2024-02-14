@@ -1,10 +1,10 @@
-<%@page import="com.krankenhausjakarta.dao.entity.Arzt"%>
+<%@page import="entity.Arzt"%>
 <%@page import="com.krankenhausjakarta.dao.ArztDao "%>
 <%@page import="java.util.List"%>
 <%@page import="com.krankenhausjakarta.dao.ArztDao "%>
 <%@ page import="servlet.DBConnection" %>
 <%@ page import="com.krankenhausjakarta.dao.AbteilungDao" %>
-<%@ page import="com.krankenhausjakarta.dao.entity.Abteilung" %>
+<%@ page import="entity.Abteilung" %>
 <%@ page import="java.util.Calendar" %>
 <%@ page import="java.util.GregorianCalendar" %>
 <%@page contentType="text/html" language="java"%>
@@ -34,7 +34,6 @@
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="index.jsp">Willkommen ${arztLogger.vorname} ${arztLogger.nachname}</a>
-
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="arztLogout">Logout</a>

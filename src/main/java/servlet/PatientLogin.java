@@ -1,10 +1,8 @@
 package servlet;
 
 
-import com.krankenhausjakarta.dao.ArztDao;
 import com.krankenhausjakarta.dao.PatientDao;
-import com.krankenhausjakarta.dao.entity.Arzt;
-import com.krankenhausjakarta.dao.entity.Patient;
+import entity.Patient;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -21,9 +19,7 @@ public class PatientLogin extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String email = req.getParameter("email");
         String password = req.getParameter("password");
-
         HttpSession session = req.getSession();
-
         PatientDao dao = new PatientDao();
         Patient patient = null;
         try {
@@ -31,7 +27,6 @@ public class PatientLogin extends HttpServlet {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
         if (patient != null) {
             session.setAttribute("patientLogger", patient);
             session.setAttribute("allesOk", "Sie haben jetzt ein Konto!");

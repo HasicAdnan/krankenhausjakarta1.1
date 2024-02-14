@@ -20,7 +20,6 @@
 	</script>
 </head>
 <body onload="noBack();">
-<%session.invalidate();%>
 <header class="col-12">
 	<div class="logo-wrapper">
 		<img src="components/assets/img/logo.jpg" alt="logo" id="logo-img" width="120px" height="120px">
