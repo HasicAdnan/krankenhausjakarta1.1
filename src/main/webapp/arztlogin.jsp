@@ -9,7 +9,7 @@
     <meta name="generator" content="Hugo 0.101.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="components/assets/css/arztlogin.css">
-    <title>Document</title>
+    <title>Arzt Login</title>
 
 </head>
 <body>
@@ -29,6 +29,14 @@
                       </div>
 
                       <form action="arztLogin" method="post">
+                          <c:if test="${not empty allesOk}">
+                              <p class="form-outline mb-4">${fehler}</p>
+                              <c:remove var="errorMsg" scope="session" />
+                          </c:if>
+                          <c:if test="${not empty allesOk}">
+                              <div class="form-outline mb-4s" role="alert">${fehler}</div>
+                              <c:remove var="allesOk" scope="session" />
+                          </c:if>
                         <p>Please login to your account</p>
 
                         <div class="form-outline mb-4">
@@ -50,9 +58,11 @@
 
                         <div class="d-flex align-items-center justify-content-center pb-4">
                           <p class="mb-0 me-2">Haben Sie novh kein Konto??</p>
-                          <button type="button" class="btn btn-outline-danger">
-                           <a href="arztregistrierung.jsp"  class="text-decoration-none">Dann erstellen Sie jetzt eins!</a>
+                            <a href="arztregistrierung.jsp"  class="text-decoration-none">
+                                <button type="button" class="btn btn-outline-danger">
+                           Dann erstellen Sie jetzt eins!
                           </button>
+                            </a>
                         </div>
 
                       </form>

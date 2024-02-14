@@ -2,7 +2,9 @@ package servlet;
 
 
 import com.krankenhausjakarta.dao.ArztDao;
+import com.krankenhausjakarta.dao.PatientDao;
 import com.krankenhausjakarta.dao.entity.Arzt;
+import com.krankenhausjakarta.dao.entity.Patient;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -13,8 +15,8 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet("/arztLogin")
-public class ArztLogin extends HttpServlet {
+@WebServlet("/patientLogin")
+public class PatientLogin extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String email = req.getParameter("email");
@@ -22,21 +24,21 @@ public class ArztLogin extends HttpServlet {
 
         HttpSession session = req.getSession();
 
-        ArztDao dao = new ArztDao();
-        Arzt arzt = null;
+        PatientDao dao = new PatientDao();
+        Patient patient = null;
         try {
-            arzt = dao.login(email, password);
+            patient = dao.login(email, password);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
-        if (arzt != null) {
-            session.setAttribute("arztLogger", arzt);
+        if (patient != null) {
+            session.setAttribute("patientLogger", patient);
             session.setAttribute("allesOk", "Sie haben jetzt ein Konto!");
-            resp.sendRedirect("arztdashboard.jsp");
+            resp.sendRedirect("patientdashboard.jsp");
         } else {
             session.setAttribute("fehler", "falsche email & password");
-            resp.sendRedirect("arztlogin.jsp");
+            resp.sendRedirect("patientlogin.jsp");
         }
 
     }

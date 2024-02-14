@@ -27,7 +27,7 @@
 			<a class="nav-link" href="index.jsp">Home</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="listArzt.jsp">Arzt List</a>
+			<a class="nav-link" href="arztliste.jsp">Arzt List</a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="termine.jsp">Termin List</a>
@@ -37,7 +37,7 @@
 
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="logout.jsp">Logout</a>
+			<a class="nav-link" href="arztLogout">Logout</a>
 		</li>
 	</ul>
 </nav>
