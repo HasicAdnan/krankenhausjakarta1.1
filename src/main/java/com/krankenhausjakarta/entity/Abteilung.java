@@ -1,4 +1,4 @@
-package entity;
+package com.krankenhausjakarta.entity;
 
 public class Abteilung {
     private int abteilungid;

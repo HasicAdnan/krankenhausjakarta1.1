@@ -1,4 +1,4 @@
-<%@ page language="java" import="servlet.DBConnection" %>
+<%@ page language="java" import="com.krankenhausjakarta.servlet.DBConnection" %>
 <%@ page language="java" import="java.sql.DriverManager" %>
 <%@ page language="java" import="java.sql.Connection" %>
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -12,7 +12,8 @@
 	<meta name="generator" content="Hugo 0.101.0">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 	<link rel="stylesheet" href="components/assets/css/main.css">
-	<title>Krankenhaus</title>
+
+	<title>Krankenhaus Linz</title>
 	<script type="text/javascript">
 		// Funkcija za sprečavanje povratka na prethodnu stranicu
 		window.history.forward();
@@ -39,16 +40,13 @@
 					<a class="nav-link" href="patientregistrierung.jsp">Patienten</a>
 				</li>
 				<li class="nav-item active">
-					<a class="nav-link" href="pflegepersonal">Personal</a>
-				</li>
-				<li class="nav-item active">
 					<a class="nav-link" href="arztlogin.jsp">Ärzte</a>
 				</li>
 				<li class="nav-item active">
 					<a class="nav-link" href="#">Notfall</a>
 				</li>
 				<li class="nav-item active">
-					<a class="nav-link" href="#">Kontakt</a>
+					<a class="nav-link" href="kontakt.jsp">Kontakt</a>
 				</li>
 
 			</ul>
@@ -94,7 +92,6 @@
 									<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
 
 								</div>
-								<small class="text-muted">9 mins</small>
 							</div>
 						</div>
 					</div>
@@ -111,9 +108,7 @@
 							<div class="d-flex justify-content-between align-items-center">
 								<div class="btn-group">
 									<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-
 								</div>
-								<small class="text-muted">9 mins</small>
 							</div>
 						</div>
 					</div>
@@ -130,9 +125,7 @@
 							<div class="d-flex justify-content-between align-items-center">
 								<div class="btn-group">
 									<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-
 								</div>
-								<small class="text-muted">9 mins</small>
 							</div>
 						</div>
 					</div>
@@ -149,9 +142,7 @@
 							<div class="d-flex justify-content-between align-items-center">
 								<div class="btn-group">
 									<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-
 								</div>
-								<small class="text-muted">9 mins</small>
 							</div>
 						</div>
 					</div>

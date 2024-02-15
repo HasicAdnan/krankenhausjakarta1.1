@@ -1,9 +1,9 @@
 package com.krankenhausjakarta.dao;
 
 
-import servlet.DBConnection;
-import entity.Patient;
-import servlet.PasswordEncrypt;
+import com.krankenhausjakarta.servlet.DBConnection;
+import com.krankenhausjakarta.entity.Patient;
+import com.krankenhausjakarta.servlet.PasswordEncrypt;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

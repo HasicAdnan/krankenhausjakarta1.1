@@ -1,9 +1,9 @@
-package entity;
+package com.krankenhausjakarta.entity;
 
 public class PatientTermin {
     private int terminid;
     private int arztid;
-    private String patientverischerungsnummer;
+    private String patientversicherungsnummer;
     private int abteilungid;
     private String datum;
     private String uhrzeit;
@@ -12,9 +12,9 @@ public class PatientTermin {
     public PatientTermin() {
     }
 
-    public PatientTermin(int arztid, String patientverischerungsnummer, int abteilungid, String datum, String uhrzeit, String hinweis) {
+    public PatientTermin(int arztid, String patientversicherungsnummer, int abteilungid, String datum, String uhrzeit, String hinweis) {
         this.arztid = arztid;
-        this.patientverischerungsnummer = patientverischerungsnummer;
+        this.patientversicherungsnummer = patientversicherungsnummer;
         this.abteilungid = abteilungid;
         this.datum = datum;
         this.uhrzeit = uhrzeit;
@@ -37,12 +37,12 @@ public class PatientTermin {
         this.arztid = arztid;
     }
 
-    public String getPatientverischerungsnummer() {
-        return patientverischerungsnummer;
+    public String getPatientversicherungsnummer() {
+        return patientversicherungsnummer;
     }
 
-    public void setPatientverischerungsnummer(String patientverischerungsnummer) {
-        this.patientverischerungsnummer = patientverischerungsnummer;
+    public void setPatientversicherungsnummer(String patientversicherungsnummer) {
+        this.patientversicherungsnummer = patientversicherungsnummer;
     }
 
     public int getAbteilungid() {
@@ -82,7 +82,7 @@ public class PatientTermin {
         return "PatientTermin{" +
                 "terminid=" + terminid +
                 ", arztid=" + arztid +
-                ", patientverischerungsnummer='" + patientverischerungsnummer + '\'' +
+                ", versicherungsnummer='" + patientversicherungsnummer + '\'' +
                 ", abteilungid=" + abteilungid +
                 ", datum='" + datum + '\'' +
                 ", uhrzeit='" + uhrzeit + '\'' +

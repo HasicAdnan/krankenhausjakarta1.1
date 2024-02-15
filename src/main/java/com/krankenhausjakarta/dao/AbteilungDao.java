@@ -1,8 +1,7 @@
 package com.krankenhausjakarta.dao;
 
-
-import entity.Abteilung;
-import servlet.DBConnection;
+import com.krankenhausjakarta.entity.Abteilung;
+import com.krankenhausjakarta.servlet.DBConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,14 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AbteilungDao {
-
     DBConnection dbInstance = DBConnection.getInstance();
     Connection conn = dbInstance.getConnect();
-
-
-
-
-
 
     public List<Abteilung> getAllAbteilung() {
         List<Abteilung> abteilunglist = new ArrayList<Abteilung>();

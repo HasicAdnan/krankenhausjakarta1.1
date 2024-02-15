@@ -1,7 +1,7 @@
 package com.krankenhausjakarta.dao;
 
 
-import entity.Pflegepersonal;
+import com.krankenhausjakarta.entity.Pflegepersonal;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

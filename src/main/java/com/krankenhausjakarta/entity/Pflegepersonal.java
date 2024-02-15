@@ -1,4 +1,4 @@
-package entity;
+package com.krankenhausjakarta.entity;
 
 public class Pflegepersonal extends Person {
     private String mitarbeiterausweis;

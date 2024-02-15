@@ -1,23 +1,38 @@
-<%@page import="entity.Arzt"%>
+<%@page import="com.krankenhausjakarta.entity.Arzt"%>
 <%@page import="com.krankenhausjakarta.dao.ArztDao "%>
 <%@page import="java.util.List"%>
 <%@page import="com.krankenhausjakarta.dao.ArztDao "%>
-<%@ page import="servlet.DBConnection" %>
-<%@ page import="entity.PatientTermin" %>
+<%@ page import="com.krankenhausjakarta.servlet.DBConnection" %>
+<%@ page import="com.krankenhausjakarta.entity.PatientTermin" %>
 <%@ page import="com.krankenhausjakarta.dao.PatientTerminDao" %>
-<%@ page import="entity.Abteilung" %>
+<%@ page import="com.krankenhausjakarta.entity.Abteilung" %>
 <%@ page import="com.krankenhausjakarta.dao.AbteilungDao" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="ISO-8859-1">
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-
-    <title>Insert title here</title>
+     <link rel="stylesheet" href="components/assets/css/termine.css">
+    <link rel="icon" href="components/assets/img/logo.jpg" type="image/x-icon">
+    <title>Termin Liste</title>
 </head>
 <body>
+<header class="col-12">
+    <div class="logo-wrapper">
+        <img src="components/assets/img/logo.jpg" alt="logo" id="logo-img" width="120px" height="120px">
+        <h1><a href="#">KRANKENHAUS LINZ</a></h1>
+    </div>
+
+
+
+    <ul class="soc-net list-reset col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+        <li><a href="http://www.facebook.com" target="_blank" class="facebook">Facebook</a></li>
+        <li><a href="http://www.twitter.com" target="_blank" class="twitter">Twitter</a></li>
+        <li><a href="http://www.linkedin.com" target="_blank" class="linked-in">LinkedIn</a></li>
+    </ul>
+</header>
 <nav class="navbar navbar-expand-sm bg-primary navbar-light">
     <ul class="navbar-nav">
         <li class="nav-item active">
@@ -44,7 +59,7 @@
                         <tr>
                             <th scope="col">Termin</th>
                             <th scope="col">Arzt: </th>
-                            <th scope="col">Patientversicherungsnummer</th>
+                            <th scope="col">Versicherungsnummer</th>
                             <th scope="col">Abteilung: </th>
                             <th scope="col">Datum: </th>
                             <th scope="col">Uhrzeit: </th>
@@ -87,7 +102,7 @@
                                 %>
                                 <%= arztvorname %> <%= arztnachname %>
                             </td>
-                            <td><%=a.getPatientverischerungsnummer()%></td>
+                            <td><%=a.getPatientversicherungsnummer()%></td>
                             <td>
                                 <%
                                     // Dohvatite ID odjeljenja iz objekta
@@ -113,11 +128,11 @@
                             <td><%=a.getDatum()%></td>
                             <td><%=a.getUhrzeit()%></td>
                             <td><%=a.getHinweis()%></td>
-                            <td><a href="edit.jsp?id=<%=a.getArztid()%>"
-                                   class="btn btn-sm btn-primary">Bearbeiten</a>
+                            <td><a href="index.jsp?id=<%=a.getTerminid()%>"
+                                   class="btn btn-sm btn-primary">Edit</a>
 
                                 <a
-                                        href="../deleteDoctor?id=<%=a.getArztid()%>"
+                                        href="terminLoschen?id=<%=a.getTerminid()%>"
                                         class="btn btn-sm btn-danger">Löschen</a></td>
                         </tr>
                         <%

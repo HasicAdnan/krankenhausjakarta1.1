@@ -1,8 +1,8 @@
-package servlet;
+package com.krankenhausjakarta.servlet;
 
 
 import com.krankenhausjakarta.dao.ArztDao;
-import entity.Arzt;
+import com.krankenhausjakarta.entity.Arzt;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -32,10 +32,9 @@ public class ArztLogin extends HttpServlet {
 
         if (arzt != null) {
             session.setAttribute("arztLogger", arzt);
-            session.setAttribute("allesOk", "Sie haben jetzt ein Konto!");
             resp.sendRedirect("arztdashboard.jsp");
         } else {
-            session.setAttribute("fehler", "falsche email & password");
+            session.setAttribute("fehler", "Falsche Email & Password");
             resp.sendRedirect("arztlogin.jsp");
         }
 

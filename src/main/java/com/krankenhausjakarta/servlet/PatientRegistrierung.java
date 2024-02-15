@@ -1,7 +1,7 @@
-package servlet;
+package com.krankenhausjakarta.servlet;
 
 import com.krankenhausjakarta.dao.PatientDao;
-import entity.Patient;
+import com.krankenhausjakarta.entity.Patient;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -21,7 +21,7 @@ public class PatientRegistrierung extends HttpServlet {
             String nachname = req.getParameter("nachname");
             String adresse = req.getParameter("adresse");
             String telefonnummer = req.getParameter("telefonnummer");
-            String patientversicherungsnummer = req.getParameter("versicherungsnummer");
+            String patientversicherungsnummer = req.getParameter("patientversicherungsnummer");
             String email = req.getParameter("email");
             String password = req.getParameter("password");
             String passwordEncrypt = PasswordEncrypt.encryptPassword(password);

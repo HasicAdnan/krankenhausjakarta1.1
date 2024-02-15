@@ -1,4 +1,4 @@
-package servlet;
+package com.krankenhausjakarta.servlet;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

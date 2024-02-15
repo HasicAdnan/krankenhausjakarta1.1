@@ -1,14 +1,15 @@
-package entity;
+package com.krankenhausjakarta.entity;
 
-public class Arzt {
+public class Patient{
 
-    private int arztid;
+
+    private int patientid;
     private String vorname;
     private String nachname;
     private String adresse;
     private String telefonnummer;
 
-    private String versicherungsnummer;
+    private String patientversicherungsnummer;
 
     private String email;
 
@@ -18,27 +19,28 @@ public class Arzt {
 
     private String ipAdresse;
 
-    public Arzt() {
+
+    public Patient() {
     }
 
-    public Arzt(String vorname, String nachname, String adresse, String telefonnummer, String versicherungsnummer, String email, String password, String geburtstag, String ipAdresse) {
+    public Patient(String vorname, String nachname, String adresse, String telefonnummer, String patientversicherungsnummer, String email, String password, String geburtstag, String ipAdresse) {
         this.vorname = vorname;
         this.nachname = nachname;
         this.adresse = adresse;
         this.telefonnummer = telefonnummer;
-        this.versicherungsnummer = versicherungsnummer;
+        this.patientversicherungsnummer = patientversicherungsnummer;
         this.email = email;
         this.password = password;
         this.geburtstag = geburtstag;
         this.ipAdresse = ipAdresse;
     }
 
-    public int getArztid() {
-        return arztid;
+    public int getPatientid() {
+        return patientid;
     }
 
-    public void setArztid(int arztid) {
-        this.arztid = arztid;
+    public void setPatientid(int patientid) {
+        this.patientid = patientid;
     }
 
     public String getVorname() {
@@ -73,12 +75,12 @@ public class Arzt {
         this.telefonnummer = telefonnummer;
     }
 
-    public String getVersicherungsnummer() {
-        return versicherungsnummer;
+    public String getPatientversicherungsnummer() {
+        return patientversicherungsnummer;
     }
 
-    public void setVersicherungsnummer(String versicherungsnummer) {
-        this.versicherungsnummer = versicherungsnummer;
+    public void setPatientversicherungsnummer(String patientversicherungsnummer) {
+        this.patientversicherungsnummer = patientversicherungsnummer;
     }
 
     public String getEmail() {
@@ -115,13 +117,13 @@ public class Arzt {
 
     @Override
     public String toString() {
-        return "Arzt{" +
-                "arztid=" + arztid +
+        return "Patient{" +
+                "patientid=" + patientid +
                 ", vorname='" + vorname + '\'' +
                 ", nachname='" + nachname + '\'' +
                 ", adresse='" + adresse + '\'' +
                 ", telefonnummer='" + telefonnummer + '\'' +
-                ", versicherungsnummer='" + versicherungsnummer + '\'' +
+                ", patientversicherungsnummer='" + patientversicherungsnummer + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", geburtstag='" + geburtstag + '\'' +

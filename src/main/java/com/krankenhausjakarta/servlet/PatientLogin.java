@@ -1,8 +1,8 @@
-package servlet;
+package com.krankenhausjakarta.servlet;
 
 
 import com.krankenhausjakarta.dao.PatientDao;
-import entity.Patient;
+import com.krankenhausjakarta.entity.Patient;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

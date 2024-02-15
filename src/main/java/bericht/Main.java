@@ -1,16 +1,11 @@
 package bericht;
 
-import servlet.DBConnection;
+import com.krankenhausjakarta.servlet.DBConnection;
 
 import java.io.*;
 import java.util.zip.*;
-import java.io.*;
 import java.net.URL;
 import java.util.zip.ZipEntry;
-import java.util.zip.ZipOutputStream;
-
-import java.io.*;
-import java.util.zip.*;
 
 public class Main {
     public static <ZipFile> void main(String[] args) throws IOException {

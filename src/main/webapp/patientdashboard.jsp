@@ -1,10 +1,10 @@
-<%@page import="entity.Arzt"%>
+<%@page import="com.krankenhausjakarta.entity.Arzt"%>
 <%@page import="com.krankenhausjakarta.dao.ArztDao "%>
 <%@page import="java.util.List"%>
 <%@page import="com.krankenhausjakarta.dao.ArztDao "%>
-<%@ page import="servlet.DBConnection" %>
+<%@ page import="com.krankenhausjakarta.servlet.DBConnection" %>
 <%@ page import="com.krankenhausjakarta.dao.AbteilungDao" %>
-<%@ page import="entity.Abteilung" %>
+<%@ page import="com.krankenhausjakarta.entity.Abteilung" %>
 <%@ page import="java.util.Calendar" %>
 <%@ page import="java.util.GregorianCalendar" %>
 <%@page contentType="text/html" language="java"%>
@@ -16,7 +16,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="components/assets/css/arztdashboard.css">
-    <title></title>
+    <link rel="icon" href="components/assets/img/logo.jpg" type="image/x-icon">
+    <title>Patient Dashboard</title>
 
 </head>
 <body onload="noBack();">
@@ -27,14 +28,13 @@
             <a class="nav-link" href="index.jsp">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="patientTermine.jsp">Termin List</a>
+            <a class="nav-link" href="patientTermineList.jsp">Termin List</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="index.jsp">Willkommen ${patientLogger.vorname} ${patientLogger.nachname}</a>
-
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="logout.jsp">Logout</a>
+            <a class="nav-link" href="index.jsp">Logout</a>
         </li>
     </ul>
 </nav>

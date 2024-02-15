@@ -9,7 +9,8 @@
     <meta name="generator" content="Hugo 0.101.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="components/assets/css/patientenregistrierung.css">
-    <title>Document</title>
+    <link rel="icon" href="components/assets/img/logo.jpg" type="image/x-icon">
+    <title>Arzt Registrierung</title>
 </head>
 <body>
 
@@ -25,43 +26,43 @@
 
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form3Example1cg">Vorname : </label>
-                        <input type="text" id="form3Example1cg" name="vorname" class="form-control form-control-lg" />
+                        <input required type="text" id="form3Example1cg" name="vorname" class="form-control form-control-lg" />
 
                     </div>
 
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form3Example2cg">Nachname : </label>
-                        <input type="text" id="form3Example2cg" name="nachname" class="form-control form-control-lg" />
+                        <input required type="text" id="form3Example2cg" name="nachname" class="form-control form-control-lg" />
                     </div>
 
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form3Example3cg">Adresse : </label>
-                        <input type="text" id="form3Example3cg" name="adresse" class="form-control form-control-lg" />
+                        <input required type="text" id="form3Example3cg" name="adresse" class="form-control form-control-lg" />
                     </div>
 
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form3Example4cg">Telefonnummer : </label>
-                        <input type="text" id="form3Example4cg" name="telefonnummer" class="form-control form-control-lg" />
+                        <input required type="text" id="form3Example4cg" name="telefonnummer" class="form-control form-control-lg" />
                     </div>
 
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form3Example5cg">Versicherungsnummer : </label>
-                        <input type="text" id="form3Example5cg" name="versicherungsnummer" class="form-control form-control-lg"/>
+                        <input required type="text" id="form3Example5cg" name="versicherungsnummer" class="form-control form-control-lg"/>
                     </div>
 
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form3Example6cg">Email : </label>
-                        <input type="email" id="form3Example6cg" name="email" class="form-control form-control-lg" />
+                        <input required type="email" id="form3Example6cg" name="email" class="form-control form-control-lg" />
                     </div>
 
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form3Example7cg">Password : </label>
-                        <input type="password" id="form3Example7cg" name="password" class="form-control form-control-lg" />
+                        <input required type="password" id="form3Example7cg" name="password" class="form-control form-control-lg" />
                     </div>
 
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form3Example8cg">Geburtstag</label>
-                        <input type="text" name="geburtstag" id="form3Example8cg" class="form-control form-control-lg" />
+                        <input required type="text" name="geburtstag" id="form3Example8cg" class="form-control form-control-lg" />
                     </div>
 
                     <p class="text-center text-muted mt-5 mb-0">Haben Sie schon ein Konto?

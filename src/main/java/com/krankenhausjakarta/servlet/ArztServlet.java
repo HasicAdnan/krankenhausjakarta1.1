@@ -1,7 +1,7 @@
-package servlet;
+package com.krankenhausjakarta.servlet;
 
 import com.krankenhausjakarta.dao.ArztDao;
-import entity.Arzt;
+import com.krankenhausjakarta.entity.Arzt;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -46,12 +46,13 @@ public class ArztServlet extends HttpServlet {
 
             if (f) {
                 conn.close();
+                session.setAttribute("allesOk", "Sie haben jetzt ein Konto!");
                 RequestDispatcher re = req.getRequestDispatcher("arztlogin.jsp");
                 re.forward(req, resp);
 
             } else {
                 conn.close();
-                session.setAttribute("errorMsg", "Ops, können Sie versuchen noch einmal");
+                session.setAttribute("fehler", "Ops, können Sie versuchen noch einmal");
                 resp.sendRedirect("arztregistrierung.jsp");
             }
 

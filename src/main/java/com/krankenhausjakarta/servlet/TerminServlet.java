@@ -1,8 +1,8 @@
-package servlet;
+package com.krankenhausjakarta.servlet;
 
 
 import com.krankenhausjakarta.dao.PatientTerminDao;
-import entity.PatientTermin;
+import com.krankenhausjakarta.entity.PatientTermin;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -20,25 +20,26 @@ public class TerminServlet extends HttpServlet {
         @Override
         protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+
             int arztid = Integer.parseInt(req.getParameter("arztid"));
-            String patientvesricherungsnummer= req.getParameter("patientversicherungsnummer");
+            String patientversicherungsnummer= req.getParameter("patientversicherungsnummer");
             int abteilungid = Integer.parseInt(req.getParameter("abteilungid"));
             String datum = req.getParameter("datum");
             String uhrzeit = req.getParameter("uhrzeit");
             String hinweis = req.getParameter("hinweis");
 
-            PatientTermin ter = new PatientTermin(arztid, patientvesricherungsnummer, abteilungid,datum, uhrzeit, hinweis);
-            DBConnection dbInstance = DBConnection.getInstance();
-            Connection conn = dbInstance.getConnect();
+            PatientTermin ter = new PatientTermin(arztid, patientversicherungsnummer, abteilungid,datum, uhrzeit, hinweis);
             PatientTerminDao dao = new PatientTerminDao();
             HttpSession session = req.getSession();
             System.out.println(ter.toString());
 
             boolean f = dao.addTermin(ter);
             if (f) {
-                session.setAttribute("terminLogger", ter.getArztid());
+
+                session.setAttribute("terminLogger", ter);
                 RequestDispatcher re = req.getRequestDispatcher("termine.jsp");
                 re.forward(req, resp);
+
             } else {
                 session.setAttribute("errorMsg", "Ops, können Sie versuchen noch einmal");
                 resp.sendRedirect("arztregistrierung.jsp");
